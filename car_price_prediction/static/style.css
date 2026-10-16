@@ -1,0 +1,50 @@
+:root {
+  font-family: Inter, Arial, sans-serif;
+  color: #172033;
+  background: #f4f7fb;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+.container { max-width: 1050px; margin: 0 auto; padding: 40px 20px; }
+.hero {
+  display: flex; justify-content: space-between; gap: 20px; align-items: flex-start;
+  margin-bottom: 24px;
+}
+.eyebrow { font-size: 12px; font-weight: 800; letter-spacing: 2px; margin: 0 0 8px; }
+h1 { font-size: clamp(32px, 5vw, 52px); margin: 0 0 10px; }
+.subtitle { color: #61708a; max-width: 650px; line-height: 1.6; margin: 0; }
+.badge { background: #172033; color: white; padding: 10px 14px; border-radius: 999px; font-size: 13px; white-space: nowrap; }
+.card {
+  background: white; border-radius: 22px; padding: 28px;
+  box-shadow: 0 12px 40px rgba(23,32,51,.08);
+}
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+label { display: flex; flex-direction: column; gap: 8px; font-weight: 700; font-size: 14px; }
+input, select {
+  width: 100%; padding: 13px 14px; border: 1px solid #d9e0eb; border-radius: 10px;
+  font-size: 15px; background: white; color: #172033;
+}
+input:focus, select:focus { outline: 2px solid #a9c7ff; border-color: #6d9fff; }
+button {
+  margin-top: 24px; width: 100%; padding: 15px; border: 0; border-radius: 11px;
+  background: #2463eb; color: white; font-size: 16px; font-weight: 800; cursor: pointer;
+}
+button:disabled { opacity: .65; cursor: wait; }
+.result {
+  margin-top: 22px; padding: 22px; border-radius: 16px; background: #eef6ff;
+  text-align: center;
+}
+.result p { margin: 0 0 6px; color: #61708a; }
+.result strong { display: block; font-size: 36px; margin-bottom: 6px; }
+.result span { color: #4b5d79; }
+.error { color: #b42318; margin: 14px 0 0; font-weight: 700; }
+footer {
+  display: flex; justify-content: space-between; color: #748198; font-size: 13px;
+  padding: 18px 4px;
+}
+@media (max-width: 700px) {
+  .container { padding: 24px 14px; }
+  .hero { flex-direction: column; }
+  .grid { grid-template-columns: 1fr; }
+  .card { padding: 20px; }
+}

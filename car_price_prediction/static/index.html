@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Price Prediction</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <main class="container">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">MACHINE LEARNING PROJECT</p>
+        <h1>Car Price Prediction</h1>
+        <p class="subtitle">Enter the vehicle details to estimate its selling price using a trained Random Forest model.</p>
+      </div>
+      <div class="badge">Flask + Scikit-learn</div>
+    </section>
+
+    <section class="card">
+      <form id="predictionForm">
+        <div class="grid">
+          <label>
+            Car name
+            <select id="Car_Name" required></select>
+          </label>
+
+          <label>
+            Manufacturing year
+            <input id="Year" type="number" min="1980" max="2035" value="2017" required>
+          </label>
+
+          <label>
+            Present price (₹ lakh)
+            <input id="Present_Price" type="number" min="0.01" step="0.01" value="6.5" required>
+          </label>
+
+          <label>
+            Driven kilometers
+            <input id="Driven_kms" type="number" min="0" step="1" value="30000" required>
+          </label>
+
+          <label>
+            Fuel type
+            <select id="Fuel_Type" required>
+              <option value="Petrol">Petrol</option>
+              <option value="Diesel">Diesel</option>
+              <option value="CNG">CNG</option>
+            </select>
+          </label>
+
+          <label>
+            Selling type
+            <select id="Selling_type" required>
+              <option value="Dealer">Dealer</option>
+              <option value="Individual">Individual</option>
+            </select>
+          </label>
+
+          <label>
+            Transmission
+            <select id="Transmission" required>
+              <option value="Manual">Manual</option>
+              <option value="Automatic">Automatic</option>
+            </select>
+          </label>
+
+          <label>
+            Previous owners
+            <select id="Owner" required>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </label>
+        </div>
+
+        <button id="predictBtn" type="submit">Predict selling price</button>
+        <p id="error" class="error" hidden></p>
+      </form>
+
+      <div id="result" class="result" hidden>
+        <p>Estimated selling price</p>
+        <strong id="price">₹0.00 lakh</strong>
+        <span id="message"></span>
+      </div>
+    </section>
+
+    <footer>
+      <span>Model: Random Forest Regressor</span>
+      <span>Dataset: Car Data</span>
+    </footer>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>
